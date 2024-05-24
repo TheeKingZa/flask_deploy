@@ -1,6 +1,7 @@
+#!/usr/bin/python3
 from flask import Flask, render_template
 
-Flask(__name__)
+app = Flask(__name__)
 
 @app.route('/')
 @app.route('/index')
