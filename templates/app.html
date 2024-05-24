@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/application.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/noticeNews.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/screen.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
@@ -17,13 +19,19 @@
         <h1 class="div-h2">Welcome to My Web</h1>    
     </div>
     <div class="content">
-        <h2 class="content-head">Hello World</h2>
+        <h2 class="content-head">Notice Board !</h2>
         <p class="content-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit culpa ipsum id a sequi adipisci iusto cum accusamus quibusdam, sapiente earum quidem optio laboriosam dignissimos itaque eum reiciendis? Blanditiis, possimus!
         Sit officiis consectetur eum sequi provident culpa aliquam maxime nihil laboriosam, nulla odio vero in rerum impedit blanditiis cum! Sequi illum repudiandae aliquid amet natus facilis sit quae, expedita libero?</p>
-        
+        <section class="notice-section">
+            <h1 class="content-head">Latest News</h1>
+            <p class="content-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti tempore laboriosam, dolore, recusandae dignissimos est similique repudiandae, corporis minima sapiente perferendis laborum. Soluta, minima ut pariatur quaerat amet asperiores culpa!</p>
+            <div class="snap-latestNews-img">
+                <img src="../static/css/images/favicon.png" alt="Reach_inc©2024" width="200px">
+            </div>
+        </section>
     </div>
 
 </main>
-    {% include 'layout/footer.html' %}
+{% include 'layout/footer.html' %}
 </body>
 </html>

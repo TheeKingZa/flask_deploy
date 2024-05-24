@@ -1,0 +1,58 @@
+/*
+ * app.html
+ */
+ .content {
+    margin: 0;
+    padding: 2pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+ } 
+
+ .notice-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: ;
+ }
+
+/*
+ * content Head
+ * content body
+ */
+
+.content-head {
+    margin: 0;
+    padding: 2%;
+    border-radius: 50%;
+    border: 3px solid red;
+    font-weight: bold;
+    font-size: 12pt;
+
+}
+
+.content-head:active {
+    font-weight: bold;
+    background-color: black;
+    color: red;
+
+}
+
+.content-body {
+    margin: 0;
+    padding: 15px;
+    justify-content: center;
+    
+}
+
+/*
+ * snap img
+ */
+
+ .snap-latestNews-img {
+    border: none;
+ 
+}

@@ -12,11 +12,10 @@ styling for NAVIGATION PANEL
 ===============*/
 
 nav {
+    background-color: lightblue;
     margin: 0;
     gap: 1.5pt;
     display: flex;
-    justify-content: flex-end;
-    justify-content: space-between;
     border-right: 10px solid black;
     border-bottom: 5px solid black;
     
@@ -28,10 +27,24 @@ nav {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: flex-end;
-    list-style: none;
 
+    flex-direction: row;
+    list-style: none;
+    border-bottom: 1px solid black;
+    border-left: 20px solid black;
+    border-top: 10px solid black;
+    border-right: 20px solid black;
+
+    border-radius: 75%;
+}
+
+.nav-ul:hover{
+    border-bottom: 1px solid black;
+    border-left: 20px solid black;
+    border-top: 10px solid black;
+    border-right: 20px solid black;
+    background-color: black;
+    border-radius: 75%;
 }
 
 .nav-btns {
@@ -47,7 +60,7 @@ nav {
 
 a {
     list-style: none;
-    color: red;
+    color: white;
 }
 /*
 styling for HEADER
@@ -71,6 +84,7 @@ header {
 styling for BODY
 ===============*/
 body {
+    background-color: powderblue;
     gap: 2rem;
     display: flex;
     flex-direction: column;
