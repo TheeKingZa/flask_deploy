@@ -12,11 +12,13 @@ styling for NAVIGATION PANEL
 ===============*/
 
 nav {
+    margin: 0;
     gap: 1.5pt;
     display: flex;
-    flex-wrap: wrap;
     justify-content: flex-end;
     justify-content: space-between;
+    border-right: 10px solid black;
+    border-bottom: 5px solid black;
     
 }
 
@@ -25,11 +27,10 @@ nav {
     gap: 50px;
     padding: 10px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-end;
     list-style: none;
-    border-right: 10px solid black;
-    border-bottom: 5px solid black;
 
 }
 
@@ -82,8 +83,10 @@ styling for FOOTER
 footer {
     display: flex;
     justify-content: center;
+    padding: 15px;
     border-right: 10px solid black;
     border-top: 5px solid black;
+    border-bottom: 5px solid black;
     border-radius: 10pt;
     
 }
@@ -91,18 +94,22 @@ footer {
 .inFooter {
     gap: 5%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     
 }
 .version {
+    gap: 50%;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
     justify-content: end;
     font-weight: bold;
     
 }
 .rights {
-    padding: 2rem;
+    margin: 0;
+    padding: 15px;
     flex-wrap: wrap;
     border-left: 3px solid black;
     align-items: center;
