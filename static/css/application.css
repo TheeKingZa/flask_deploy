@@ -90,11 +90,12 @@ footer {
 
 .inFooter {
     gap: 5%;
-    display: flex;    
+    display: flex;
     
 }
 .version {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: end;
     font-weight: bold;
@@ -102,6 +103,7 @@ footer {
 }
 .rights {
     padding: 2rem;
+    flex-wrap: wrap;
     border-left: 3px solid black;
     align-items: center;
     justify-content: center;
