@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Aboutus</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>About Us</h1>
-    <p>Welcome to our website! We are a team dedicated to providing you with the best services.</p>
+    {% include 'layout/navBar.html' %}
+    {% include 'layout/header.html' %}
+
+    <!-- Page content goes here -->
+
+    {% include 'layout/footer.html' %}
 </body>
 </html>
-
