@@ -84,6 +84,7 @@ footer {
     justify-content: center;
     border-right: 10px solid black;
     border-top: 5px solid black;
+    border-radius: 10pt;
     
 }
 
@@ -94,6 +95,8 @@ footer {
 }
 .version {
     display: flex;
+    flex-direction: column;
+    justify-content: end;
     font-weight: bold;
     
 }
