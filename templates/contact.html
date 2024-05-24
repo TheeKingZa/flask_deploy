@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Page</title>
+    <title>Contact Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     {% include 'layout/navBar.html' %}
     {% include 'layout/header.html' %}
 
-    <!-- Page content goes here -->
+    <div>
+        <h2>Contact Us</h2>
+        <p>How to get in touch with us.</p>
+    </div>
 
     {% include 'layout/footer.html' %}
 </body>
