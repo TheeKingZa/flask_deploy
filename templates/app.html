@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/application.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body>
     {% include 'layout/navBar.html' %}
     {% include 'layout/header.html' %}
-
+<main>
     <!-- Page content goes here -->
-    <div>
-        <h2>Hello World</h2>
+    <div class="div-flex">
+        <h1 class="div-h2">Welcome to My Web</h1>    
+    </div>
+    <div class="content">
+        <h2 class="content-head">Hello World</h2>
+        <p class="content-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit culpa ipsum id a sequi adipisci iusto cum accusamus quibusdam, sapiente earum quidem optio laboriosam dignissimos itaque eum reiciendis? Blanditiis, possimus!
+        Sit officiis consectetur eum sequi provident culpa aliquam maxime nihil laboriosam, nulla odio vero in rerum impedit blanditiis cum! Sequi illum repudiandae aliquid amet natus facilis sit quae, expedita libero?</p>
+        
     </div>
 
+</main>
     {% include 'layout/footer.html' %}
 </body>
 </html>

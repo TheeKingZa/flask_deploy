@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/application.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body>
     {% include 'layout/navBar.html' %}
     {% include 'layout/header.html' %}
 
-    <div>
-        <h2>About Us</h2>
-        <p>Information about our company.</p>
+    <div class="div-flex">
+        <h2 class="div-h2">About Us</h2>
+        <p class="div-h2-p">Information about our company.</p>
     </div>
 
     {% include 'layout/footer.html' %}

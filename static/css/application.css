@@ -1,0 +1,107 @@
+/*
+ * My Application Styling.
+ *
+ * @body.css - my styling for 
+ *      - Nav
+ *      - header
+ *      - Footer 
+ */
+
+/*
+styling for NAVIGATION PANEL
+===============*/
+
+nav {
+    gap: 1.5pt;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    justify-content: space-between;
+    
+}
+
+.nav-ul {
+    margin: 0px;
+    gap: 50px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+    border-right: 10px solid black;
+    border-bottom: 5px solid black;
+
+}
+
+.nav-btns {
+    padding: 5pt;
+    border-radius: 50pt;
+}
+
+.nav-btns:hover {
+    background-color: black;
+    color: white;
+
+}
+
+a {
+    list-style: none;
+    color: red;
+}
+/*
+styling for HEADER
+===============*/
+
+header {
+    display: flex;
+    margin-left: 0;
+    padding: 1.5px;
+    
+}
+
+.user-name {
+    padding: 15px;
+    border-radius: 50%;
+    border-right: 10px solid black;
+    border-bottom: 1px solid black;
+
+}
+/*
+styling for BODY
+===============*/
+body {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+styling for FOOTER
+===============*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    border-right: 10px solid black;
+    border-top: 5px solid black;
+    
+}
+
+.inFooter {
+    gap: 5%;
+    display: flex;    
+    
+}
+.version {
+    display: flex;
+    font-weight: bold;
+    
+}
+.rights {
+    padding: 2rem;
+    border-left: 3px solid black;
+    align-items: center;
+    justify-content: center;
+
+
+}
