@@ -1,6 +1,27 @@
 /*
  * app.html
  */
+
+:root {
+   --color-primary: lightseagreen;
+   --color-black:  black;
+   --color-red: red;
+   --color-white: white;
+   --color-grey: #a0a0a0;
+   --color-light-grey: #f3f3f3;
+   --color-dark-grey: #353535;
+   --color-red: #cd3e65;
+   --color-green: #08805b;
+
+   --text-color: var(--color-black);
+   --valid-color: var(--color-green);
+   --error-color: var(--color-red);
+}
+
+/*
+ * Content
+ */
+
  .content {
     margin: 0;
     padding: 2pt;
@@ -16,7 +37,9 @@
     justify-content: center;
     align-items: center;
     gap: 12px;
-    background-color: ;
+    background-color: var(--color-white);
+    border-radius: 70px;
+    border: 1px solid var(--color-black);
  }
 
 /*
@@ -28,7 +51,7 @@
     margin: 0;
     padding: 2%;
     border-radius: 50%;
-    border: 3px solid red;
+    border: 3px solid var(--color-red);
     font-weight: bold;
     font-size: 12pt;
 
@@ -36,8 +59,8 @@
 
 .content-head:active {
     font-weight: bold;
-    background-color: black;
-    color: red;
+    background-color: var(--color-black);
+    color: var(--color-red);
 
 }
 
@@ -48,11 +71,4 @@
     
 }
 
-/*
- * snap img
- */
 
- .snap-latestNews-img {
-    border: none;
- 
-}
