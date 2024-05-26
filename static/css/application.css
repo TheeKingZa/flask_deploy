@@ -31,7 +31,6 @@ styling for NAVIGATION PANEL
 
 nav {
     background-color: var(--color-primary);
-    gap: 1.5pt;
     display: flex;
     justify-content: space-between;
     border-left: 5px solid black;
@@ -39,12 +38,9 @@ nav {
 
 .div-ul {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
     list-style: none;
-    flex-wrap: wrap;
-    gap: 2rem;
     
     
 }
