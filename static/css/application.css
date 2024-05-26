@@ -174,3 +174,12 @@ footer {
     color: var(--color-black);
 
 }
+
+
+/*
+ * img
+ */
+
+ .snap-latestNews-img {
+    padding: 10px;
+ }

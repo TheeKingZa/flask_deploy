@@ -50,22 +50,35 @@
  /*
   * on Contact_page
   */
-.ul-info {
+  .ul-info-head {
     gap: 5px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     list-style: none;
     padding: 15px;
     border-top: 10px solid var(--color-black);
     border-bottom: 5px solid var(--color-black);
     border-radius: 10%;
+    border: 3px solid lime;
     
 }
 
+.ul-info-body {
+    gap: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    padding: 15px;
+    border-radius: 10%;
+    border: 3px solid red;
+    
+}
+
+
 .ul-li {
     padding: 1.5pt;
-    justify-content:flex-end;
     
 }
 
