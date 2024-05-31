@@ -64,6 +64,14 @@ nav {
 .nav-a:hover {
 }
 
+.btn-baq {
+    background-color: var(--color-primary);
+    font-weight: bold;
+}
+.btn-baq:hover {
+    background-color: var(--color-red);
+    font-weight: bold;
+}
 /*
 styling for HEADER
 ===============*/

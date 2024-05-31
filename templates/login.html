@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/application.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/noticeNews.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/screen.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_signup.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='css/images/favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='css/images/favicon.png') }}">
+
+</head>
+<body>
+
+
+    <div class="form-container">
+    <!-- Login page -->
+    <div class="form-head">
+    <div><h2>Login</h2></div>
+    <div><img src="../static/images/favicon.png" alt="logo" width="70px"></div>
+</div>
+<div class="form-div">
+    <form class="form-body" action="{{ url_for('login') }}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+
+        <input type="submit" value="Login">
+        <div class="btns">
+        <p>Don't have an account?</p>
+        <a href="{{ url_for('signup')}}">Sign Up here</a>
+    </div>
+    </form>
+
+    <a class="btns" href="{{ url_for('home')}}">Home Test</a>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</div>
+</div>
+    
+</body>
+</html>

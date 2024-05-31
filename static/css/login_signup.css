@@ -1,0 +1,55 @@
+/*
+ * login and signUp
+ * 
+ * @Display
+ */
+
+
+
+ .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--color-green);
+    height: 100vh;
+    
+    
+}
+
+.form-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50vw;
+
+    
+}
+
+.form-div {
+    padding: 15px;
+   
+}
+
+.form-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.btn-baq {
+    color: black;
+}
+
+.btn-baq:hover {
+    border-color: var(--color-red);
+    
+}
+
+.btns {
+    gap: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

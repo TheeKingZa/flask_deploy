@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/application.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/noticeNews.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/screen.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_signup.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='css/images/favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='css/images/favicon.png') }}">
+
+</head>
+<body>
+ 
+    <div class="form-container">
+    <div class="form-head">
+        <div><h2>Signup</h2></div>
+        <div><img src="../static/images/favicon.png" alt="logo" width="70px"></div>
+    </div>
+    <div class="form-div">
+        <form class="form-body" action="{{ url_for('signup') }}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required>
+        <br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="cell_number">Cell Number:</label>
+        <input type="text" id="cell_number" name="cell_number" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+        <br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        <br>
+        <label for="id_number">ID Number:</label>
+        <input type="text" id="id_number" name="id_number" required>
+        <br>
+        <div class="btns">
+        <input type="submit" value="Signup">
+        
+        <button class="btn-baq"><a class="btn-baq" href="{{ url_for('login')}}">Back to login</a></button>
+        </div>    
+    </form>
+    </div>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</div>
+   
+</body>
+</html>
