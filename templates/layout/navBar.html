@@ -1,14 +1,20 @@
+<!-- navBar.html-->
 <nav>
 
     <div class="username-user">
         {% if 'username' not in session %}
         <li><a href="{{ url_for('login') }}">Login</a></li>
         <li><a href="{{ url_for('signup') }}">Signup</a></li>
-        <li style="color: red">offline</li>
     {% else %}
-        <img class="pro-img" src="../static/images/blank.jpg" alt="Profile_pic" width="50%" height="auto">
-        <h1>Username: {{ session['username'] }}</h1>
+    <div class="username-table">
+        <a href="{{ url_for('profile')}}"><img class="pro-img" src="../../static/uploads/profile_pics/{{ username }}/profile_picture.jpg" alt="Profile_pic" width="80px" height="auto"></a>
+        <div class="user-info-div">
+        <div style="color: lime;">online</div>
+        <div class="user-name"><h1> {{ session['username'] }}</h1></div>
     </div>
+    </div>
+    </div>
+    
     <div class="div-ul">
         <a href="/home" style="list-style: none;" class="nav-a"><button class="nav-btns">Home</button></a></>
         <a href="/about" class="nav-a"><button class="nav-btns">About</button></a>
@@ -17,5 +23,6 @@
         <a href="/logout" class="nav-a"><button class="btn-baq">Logout</button></a>
         {% endif %}
     </div>
-    </div>
+    
+</div>
 </nav>

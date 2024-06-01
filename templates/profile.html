@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/application.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+
+</head>
+<body>
+    <div class="profile-div">
+    <div class="profile-head">
+        <div class="div-home"><a href="/home" style="list-style: none;" class="nav-a"><button class="nav-btns"><</button></a></></div>
+     <div><h2>User INFO</h2></div>
+     <div><img src="../static/images/favicon.png" alt="logo" width="70px"></div>
+    </div>
+    <div class="profile-info">
+    <div><h3><strong>First Name:</strong></h3> <p>{{ user.first_name }}</p></div>
+    <div><h3><strong>Last Name:</strong></h3> <p>{{ user.last_name }}</p></div>
+    <div><h3><strong>Email:</strong></h3><p> {{ user.email }}</p></div>
+    <div><h3><strong>Cell Number:</strong></h3> <p>{{ user.cell_number }}</p></div>
+    <div><h3><strong>Date of Birth:</strong></h3><p> {{ user.dob }}</p></div>
+    <div><h3><strong>ID Number:</strong></h3> <p>{{ user.id_number[:6]}} ***** {{ user.id_number[10:]}}</p></div>
+    <div>
+        <form action="{{ url_for('upload_profile_picture') }}" method="post" enctype="multipart/form-data">
+            <label for="profile_picture">Upload Profile Picture:</label>
+            <input type="file" name="profile_picture" id="profile_picture" accept="image/*">
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+    </div>
+    <div class="profile-btns">
+
+    <h2>Delete Account</h2>
+    <form id="delete-form" action="{{ url_for('delete_account') }}" method="POST" style="display: none;">
+        <input type="hidden" name="username" value="{{ username }}">
+    </form>
+    <button class="delete-acc-btn" type="button" onclick="confirmDeletion()">Delete Account</button>
+</div>
+</div>
+{% include 'layout/footer.html' %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }} flash-message">
+        {{ message }}
+    </div>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+
+
+
+    <script src="{{ url_for('static', filename='js/deletion.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Show flash messages
+            $('.flash-message').each(function() {
+                $(this).show().delay(5000).fadeOut();
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -10,8 +10,8 @@
 /*
  * Root
  */
-:root {
-    --color-primary: lightblue;
+ :root {
+    --color-primary: lightseagreen;
     --color-black:  black;
     --color-red: red;
     --color-white: white;
@@ -20,7 +20,7 @@
     --color-dark-grey: #353535;
     --color-red: #cd3e65;
     --color-green: #08805b;
-  
+ 
     --text-color: var(--color-black);
     --valid-color: var(--color-green);
     --error-color: var(--color-red);
@@ -88,7 +88,6 @@ header {
  */
  
 .username-user{
-    margin: 0px;
     display: flex;
     flex-direction: row;
     padding: 3pt;
@@ -101,13 +100,24 @@ header {
      
 }
 .user-name {
-    display: flex;
-    align-self: flex-end;
-    align-items: center;
-    padding: 10px;
+    font-size: 100%;
     font-weight: bold;
+    
 }
 
+
+.user-info-div {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.username-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /*
 styling for BODY
 ===============*/

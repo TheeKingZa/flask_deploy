@@ -5,17 +5,26 @@ from flask import (
     session,
     redirect,
     request,
-    url_for
+    url_for,
+    flash
 )
 from werkzeug.security import (
     generate_password_hash,
     check_password_hash
 )
+from werkzeug.utils import secure_filename
 import json
 import os
 
 app = Flask(__name__)
 app.secret_key = 'admin'
+UPLOAD_FOLDER = 'static/uploads/profile_pics'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# Ensure the upload folder exists
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
 # Used for session encryption
 
 # Path to the JSON database
@@ -40,6 +49,10 @@ def save_users(users):
 # Helper function to format names
 def format_name(name):
     return name.capitalize()
+
+# Function to check allowed file extensions
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/', methods=['POST', 'GET'])
 def login():
@@ -102,9 +115,6 @@ def signup():
             if user['email'] == email:
                 return render_template('signup.html', error='E-mail already taken')
 
-        # check for username duplicates
-        for username in users:
-            return render_template('signup.html', error='Username already taken')
 
         # Hash the password
         hashed_password = generate_password_hash(password)
@@ -116,13 +126,82 @@ def signup():
             'email': email,
             'cell_number': cell_number,
             'dob': dob,
-            'id_number': id_number
+            'id_number': id_number,
+            'profile_picture': None  # Initialize profile picture as None
         }
         save_users(users)
         session['username'] = username
         return redirect(url_for('home'))
     
     return render_template('signup.html')
+
+@app.route('/profile')
+def profile():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    
+    users = load_users()
+    username = session['username']
+    user = users.get(username, {})
+    return render_template('profile.html', username=username, user=user)
+
+@app.route('/delete_account', methods=['POST'])
+def delete_account():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+
+    entered_username = request.form['username']
+    session_username = session['username']
+
+    if entered_username != session_username:
+        return redirect(url_for('profile'))
+
+    users = load_users()
+
+    if session_username in users:
+        del users[session_username]
+        save_users(users)
+        session.pop('username', None)  # Remove the username from the session
+        return redirect(url_for('login'))
+
+    return redirect(url_for('profile'))
+
+@app.route('/upload_profile_picture', methods=['POST'])
+def upload_profile_picture():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+
+    if 'profile_picture' not in request.files:
+        flash('No file part', 'error')
+        return redirect(url_for('profile'))
+
+    file = request.files['profile_picture']
+
+    if file.filename == '':
+        flash('No selected file', 'error')
+        return redirect(url_for('profile'))
+
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        extension = filename.rsplit('.', 1)[1].lower()
+        username = session['username']
+        filename = f"profile_picture.{extension}"
+        user_folder = os.path.join(app.config['UPLOAD_FOLDER'], username)
+        os.makedirs(user_folder, exist_ok=True)
+        filepath = os.path.join(user_folder, filename)
+        file.save(filepath)
+
+        # Update user's profile picture in the database
+        users = load_users()
+        if username in users:
+            users[username]['profile_picture'] = os.path.join('uploads/profile_pics', username, filename)
+            save_users(users)
+        
+        flash('Profile picture uploaded successfully!', 'success')
+        return redirect(url_for('profile'))
+
+    flash('Invalid file format', 'error')
+    return redirect(url_for('profile'))
 
 
 @app.route('/home')
