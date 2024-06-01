@@ -5,7 +5,7 @@
     <title>User Profile</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/application.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
-    <script src="{{ url_for('static', filename='js/deletion.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/screen.css') }}">
 
 </head>
 <body>
@@ -35,11 +35,10 @@
                 </form>
             </div>
             <br><br>
-            or
-            <br><br>
+            or<br><br>
         </div>
         <div class="profile-btns">
-            <h2>Delete You're Account</h2>
+            <h2>Delete Account</h2>
             <form id="delete-form" action="{{ url_for('delete_account') }}" method="POST" style="display: none;">
                 <input type="hidden" name="username" value="{{ username }}">
             </form>
@@ -58,6 +57,21 @@
     {% endif %}
     {% endwith %}
 
+    <script src="{{ url_for('static', filename='js/deletion.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Show flash messages
+            $('.flash-message').each(function() {
+                $(this).show().delay(5000).fadeOut();
+            });
+        });
+
+        function confirmDeletion() {
+            if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+                document.getElementById('delete-form').submit();
+            }
+        }
+    </script>
 </body>
 </html>

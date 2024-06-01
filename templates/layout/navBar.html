@@ -8,9 +8,9 @@
     {% else %}
     <div class="username-table">
         {% if profile_picture %}
-        <a href="{{ url_for('profile')}}"><img class="pro-img" src="{{ url_for('static', filename='uploads/profile_pics/' +  username  + '/profile_picture.jpg') }}" alt="Profile_pic" width="80px" height="auto"></a>
-        {% else %}
         <a href="{{ url_for('profile') }}"><img class="pro-img" src="{{ url_for('static', filename='images/blank.jpg') }}" alt="Default_Profile_pic" width="80px" height="auto"></a>
+        {% else %}
+        <a href="{{ url_for('profile')}}"><img class="pro-img" src="{{ url_for('static', filename='uploads/profile_pics/' +  username  + '/profile_picture.jpg') }}" alt="Profile_pic" width="150px" height="150px"></a>
         {% endif %}
         <div class="user-info-div">
         <div style="color: lime;">online</div>
