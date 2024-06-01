@@ -182,8 +182,7 @@ def upload_profile_picture():
         return redirect(url_for('profile'))
 
     if file and allowed_file(file.filename):
-        filename = secure_filename(file.filename)
-        extension = filename.rsplit('.', 1)[1].lower()
+        extension = file.filename.rsplit('.', 1)[1].lower()
         username = session['username']
         filename = f"profile_picture.{extension}"
         user_folder = os.path.join(app.config['UPLOAD_FOLDER'], username)
@@ -213,17 +212,23 @@ def home():
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    return render_template('about.html', username=session['username'])
 
 
 @app.route('/services')
 def services():
-    return render_template('services.html')
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    return render_template('services.html', username=session['username'])
 
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    return render_template('contact.html', username=session['username'])
 
 
 if __name__ == '__main__':

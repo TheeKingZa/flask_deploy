@@ -1,4 +1,14 @@
 /*
+ * Show flash messages and FadeOut
+ */
+$(document).ready(function() {
+  // Show flash messages
+  $('.flash-message').each(function() {
+      $(this).show().delay(5000).fadeOut();
+  });
+});
+
+/*
  * Button to confirm the account deletion.
  * user should Enter their username.
  */
@@ -12,3 +22,4 @@ function confirmDeletion() {
       alert("Incorrect username. Please try again.");
   }
 }
+

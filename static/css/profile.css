@@ -5,36 +5,33 @@
 
 
 .profile-div {
-    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 3px solid var(--color-green);
-    height: 100vh;
+  
 }
 
 .div-home {
-    padding: 2px;
-    display: flex;
-    align-items: center;
-
+    padding: 15px;
+    align-self: center;
+    
+    
 }
 
 .profile-head {
     display: flex;
     justify-content: space-between;
     width: 50vw;
-    border-bottom: 2px solid black;
-
+    border-bottom: 3px solid black;
+    
 }
 
 .profile-info {
-    margin: 0px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 50vw;
 
     
 }
@@ -47,7 +44,6 @@
 }
 
 .delete-acc-btn {
-    margin: 0px;
     color: var(--color-black);
     background-color: var(--color-secondary);
 }
@@ -64,4 +60,14 @@
     right: 20px;
     z-index: 1000;
     display: none;
+    padding: 15px;
+    border-radius: 5px;
+}
+.flash-message.success {
+    background-color: lime;
+    color: white;
+}
+.flash-message.error {
+    background-color: red;
+    color: white;
 }

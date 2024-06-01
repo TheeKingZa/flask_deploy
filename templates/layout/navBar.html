@@ -7,7 +7,11 @@
         <li><a href="{{ url_for('signup') }}">Signup</a></li>
     {% else %}
     <div class="username-table">
-        <a href="{{ url_for('profile')}}"><img class="pro-img" src="../../static/uploads/profile_pics/{{ username }}/profile_picture.jpg" alt="Profile_pic" width="80px" height="auto"></a>
+        {% if profile_picture %}
+        <a href="{{ url_for('profile')}}"><img class="pro-img" src="{{ url_for('static', filename='uploads/profile_pics/' +  username  + '/profile_picture.jpg') }}" alt="Profile_pic" width="80px" height="auto"></a>
+        {% else %}
+        <a href="{{ url_for('profile') }}"><img class="pro-img" src="{{ url_for('static', filename='images/blank.jpg') }}" alt="Default_Profile_pic" width="80px" height="auto"></a>
+        {% endif %}
         <div class="user-info-div">
         <div style="color: lime;">online</div>
         <div class="user-name"><h1> {{ session['username'] }}</h1></div>
